@@ -10,7 +10,7 @@ module.exports = {
       transitionProperty: {
         "width": "width",
         "spacing": 'margin, padding',
-      },
+      }, 
       maxWidth: {
         "8xl": "100rem",
       },
