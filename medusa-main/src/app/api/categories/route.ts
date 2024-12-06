@@ -9,9 +9,9 @@ import { notFound } from "next/navigation"
  */
 export async function GET(request: NextRequest) {
   const productService = await initializeProductModule()
-
+ 
   const { offset, limit } = Object.fromEntries(request.nextUrl.searchParams)
-
+ 
   const [product_categories, count] = await productService
     .listAndCountCategories(
       {},
