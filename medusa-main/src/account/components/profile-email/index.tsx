@@ -1,10 +1,10 @@
+import Input from "@modules/common/components/input"
+import React, { useEffect } from "react"
+import AccountInfo from "../account-info"
 import { useAccount } from "@lib/context/account-context"
 import { Customer } from "@medusajs/medusa"
-import Input from "@modules/common/components/input"
-import { useUpdateMe } from "medusa-react"
-import React, { useEffect } from "react"
 import { useForm, useWatch } from "react-hook-form"
-import AccountInfo from "../account-info"
+import { useUpdateMe } from "medusa-react"
 
 type MyInformationProps = {
   customer: Omit<Customer, "password_hash">
@@ -32,7 +32,6 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
   })
 
   const { refetchCustomer } = useAccount()
-
   const {
     mutate: update,
     isLoading,
@@ -46,11 +45,6 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
       email: customer.email,
     })
   }, [customer, reset])
-
-  const email = useWatch({
-    control,
-    name: "email",
-  })
 
   const updateEmail = (data: UpdateCustomerEmailFormData) => {
     return update(
@@ -68,6 +62,11 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
       }
     )
   }
+  
+  const email = useWatch({
+    control,
+    name: "email",
+  })
 
   return (
     <form onSubmit={handleSubmit(updateEmail)} className="w-full">
