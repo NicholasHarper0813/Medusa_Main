@@ -1,8 +1,8 @@
 import { useAccount } from "@lib/context/account-context"
 import ChevronDown from "@modules/common/icons/chevron-down"
-import clsx from "clsx"
-import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Link from "next/link"
+import clsx from "clsx"
 
 const AccountNav = () => {
   const route = usePathname()
