@@ -1,10 +1,10 @@
+import Input from "@modules/common/components/input"
+import React, { useEffect } from "react"
+import AccountInfo from "../account-info"
 import { medusaClient } from "@lib/config"
 import { Customer } from "@medusajs/medusa"
-import Input from "@modules/common/components/input"
 import { useUpdateMe } from "medusa-react"
-import React, { useEffect } from "react"
 import { useForm } from "react-hook-form"
-import AccountInfo from "../account-info"
 
 type MyInformationProps = {
   customer: Omit<Customer, "password_hash">
@@ -20,6 +20,7 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
   const [errorMessage, setErrorMessage] = React.useState<string | undefined>(
     undefined
   )
+  
   const {
     register,
     handleSubmit,
@@ -49,7 +50,8 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
       .then(() => true)
       .catch(() => false)
 
-    if (!isValid) {
+    if (!isValid) 
+    {
       setError("old_password", {
         type: "validate",
         message: "Old password is incorrect",
@@ -59,7 +61,8 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
       return
     }
 
-    if (data.new_password !== data.confirm_password) {
+    if (data.new_password !== data.confirm_password) 
+    {
       setError("confirm_password", {
         type: "validate",
         message: "Passwords do not match",
