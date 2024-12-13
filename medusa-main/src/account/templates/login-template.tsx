@@ -9,7 +9,6 @@ import Login from "../components/login"
 const LoginTemplate = () => {
   const { loginView, customer, retrievingCustomer } = useAccount()
   const [currentView, _] = loginView
-
   const router = useRouter()
 
   useEffect(() => {
