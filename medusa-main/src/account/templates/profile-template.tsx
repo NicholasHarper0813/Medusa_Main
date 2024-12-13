@@ -10,7 +10,8 @@ import ProfilePhone from "../components/profile-phone"
 const ProfileTemplate = () => {
   const { customer, retrievingCustomer, refetchCustomer } = useAccount()
 
-  if (retrievingCustomer || !customer) {
+  if (retrievingCustomer || !customer) 
+  {
     return null
   }
 
