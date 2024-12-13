@@ -1,12 +1,12 @@
-import { medusaClient } from "@lib/config"
 import { LOGIN_VIEW, useAccount } from "@lib/context/account-context"
+import { medusaClient } from "@lib/config"
+import { FieldValues, useForm } from "react-hook-form"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
 import Button from "@modules/common/components/button"
 import Input from "@modules/common/components/input"
 import Spinner from "@modules/common/icons/spinner"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { FieldValues, useForm } from "react-hook-form"
 
 interface RegisterCredentials extends FieldValues {
   first_name: string
@@ -21,12 +21,12 @@ const Register = () => {
   const [_, setCurrentView] = loginView
   const [authError, setAuthError] = useState<string | undefined>(undefined)
   const router = useRouter()
-
   const handleError = (e: Error) => {
     setAuthError("An error occured. Please try again.")
   }
 
-  const {
+  const 
+  {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
