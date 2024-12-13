@@ -1,8 +1,8 @@
 import { Disclosure } from "@headlessui/react"
+import { useEffect } from "react"
 import useToggleState from "@lib/hooks/use-toggle-state"
 import Button from "@modules/common/components/button"
 import clsx from "clsx"
-import { useEffect } from "react"
 
 type AccountInfoProps = {
   label: string
@@ -26,7 +26,6 @@ const AccountInfo = ({
   children,
 }: AccountInfoProps) => {
   const { state, close, toggle } = useToggleState()
-
   const handleToggle = () => {
     clearState()
     setTimeout(() => toggle(), 100)
@@ -63,7 +62,7 @@ const AccountInfo = ({
         </div>
       </div>
 
-      {/* Success state */}
+      { }
       <Disclosure>
         <Disclosure.Panel
           static
