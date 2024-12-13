@@ -2,7 +2,8 @@ const { withStoreConfig } = require("./store-config")
 const store = require("./store.config.json")
 
 module.exports = withStoreConfig({
-  experimental: {
+  experimental: 
+  {
     serverComponentsExternalPackages: [
       "@medusajs/product",
       "@medusajs/modules-sdk",
@@ -10,7 +11,8 @@ module.exports = withStoreConfig({
   },
   features: store.features,
   reactStrictMode: true,
-  images: {
+  images: 
+  {
     remotePatterns: [
       {
         protocol: "http",
