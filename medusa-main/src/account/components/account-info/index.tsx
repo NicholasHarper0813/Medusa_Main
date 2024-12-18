@@ -20,8 +20,8 @@ const AccountInfo = ({
   currentInfo,
   isLoading,
   isSuccess,
-  isError,
   clearState,
+  isError,
   errorMessage = "An error occurred, please try again",
   children,
 }: AccountInfoProps) => {
@@ -80,7 +80,6 @@ const AccountInfo = ({
         </Disclosure.Panel>
       </Disclosure>
 
-      {/* Error state  */}
       <Disclosure>
         <Disclosure.Panel
           static
