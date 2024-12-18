@@ -1,14 +1,14 @@
 import { medusaClient } from "@lib/config"
 import { useAccount } from "@lib/context/account-context"
+import { useForm } from "react-hook-form"
 import useToggleState from "@lib/hooks/use-toggle-state"
 import CountrySelect from "@modules/checkout/components/country-select"
 import Button from "@modules/common/components/button"
-import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
-import Plus from "@modules/common/icons/plus"
+import Input from "@modules/common/components/input"
 import Spinner from "@modules/common/icons/spinner"
+import Plus from "@modules/common/icons/plus"
 import React, { useState } from "react"
-import { useForm } from "react-hook-form"
 
 type FormValues = {
   first_name: string
