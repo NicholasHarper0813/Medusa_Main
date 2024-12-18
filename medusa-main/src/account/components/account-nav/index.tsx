@@ -1,6 +1,6 @@
 import { useAccount } from "@lib/context/account-context"
-import ChevronDown from "@modules/common/icons/chevron-down"
 import { usePathname } from "next/navigation"
+import ChevronDown from "@modules/common/icons/chevron-down"
 import Link from "next/link"
 import clsx from "clsx"
 
