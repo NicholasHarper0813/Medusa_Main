@@ -2,6 +2,7 @@ import { medusaClient } from "@lib/config"
 import { useAccount } from "@lib/context/account-context"
 import useToggleState from "@lib/hooks/use-toggle-state"
 import { Address } from "@medusajs/medusa"
+import { useForm } from "react-hook-form"
 import CountrySelect from "@modules/checkout/components/country-select"
 import Button from "@modules/common/components/button"
 import Input from "@modules/common/components/input"
@@ -9,9 +10,8 @@ import Modal from "@modules/common/components/modal"
 import Edit from "@modules/common/icons/edit"
 import Spinner from "@modules/common/icons/spinner"
 import Trash from "@modules/common/icons/trash"
-import clsx from "clsx"
 import React, { useState } from "react"
-import { useForm } from "react-hook-form"
+import clsx from "clsx"
 
 type FormValues = {
   first_name: string
@@ -38,7 +38,6 @@ const EditAddress: React.FC<EditAddressProps> = ({
   const { state, open, close } = useToggleState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | undefined>(undefined)
-
   const { refetchCustomer } = useAccount()
   const {
     register,
