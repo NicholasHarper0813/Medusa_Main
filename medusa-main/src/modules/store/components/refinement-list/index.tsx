@@ -1,6 +1,6 @@
 import { StoreGetProductsParams } from "@medusajs/medusa"
-import { useCollections } from "medusa-react"
 import { ChangeEvent } from "react"
+import { useCollections } from "medusa-react"
 
 type RefinementListProps = {
   refinementList: StoreGetProductsParams
@@ -18,29 +18,26 @@ const RefinementList = ({
     id: string
   ) => {
     const { checked } = e.target
-
     const collectionIds = refinementList.collection_id || []
-
     const exists = collectionIds.includes(id)
 
-    if (checked && !exists) {
+    if (checked && !exists) 
+    {
       setRefinementList({
         ...refinementList,
         collection_id: [...collectionIds, id],
       })
-
       return
     }
 
-    if (!checked && exists) {
+    if (!checked && exists) 
+    {
       setRefinementList({
         ...refinementList,
         collection_id: collectionIds.filter((c) => c !== id),
       })
-
       return
     }
-
     return
   }
 
