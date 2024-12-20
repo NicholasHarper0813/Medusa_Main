@@ -52,11 +52,9 @@ const SkeletonProductPage = () => {
                       })}
                     </div>
                   </div>
-
                   <div className="mb-4">
                     <div className="bg-gray-100 h-9 w-20"></div>
                   </div>
-
                   <SkeletonButton />
                 </div>
               </div>
