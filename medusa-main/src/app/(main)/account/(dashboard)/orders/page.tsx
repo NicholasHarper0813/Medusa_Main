@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "Overview of your previous orders..",
 }
 
-export default function Orders() {
+export default function Orders() 
+{
   return <OrdersTemplate />
 }
