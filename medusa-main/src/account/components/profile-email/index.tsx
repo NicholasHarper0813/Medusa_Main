@@ -1,8 +1,8 @@
 import Input from "@modules/common/components/input"
 import React, { useEffect } from "react"
 import AccountInfo from "../account-info"
-import { useAccount } from "@lib/context/account-context"
 import { Customer } from "@medusajs/medusa"
+import { useAccount } from "@lib/context/account-context"
 import { useForm, useWatch } from "react-hook-form"
 import { useUpdateMe } from "medusa-react"
 
@@ -19,7 +19,8 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
     undefined
   )
 
-  const {
+  const 
+  {
     register,
     handleSubmit,
     reset,
@@ -32,7 +33,8 @@ const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
   })
 
   const { refetchCustomer } = useAccount()
-  const {
+  const 
+  {
     mutate: update,
     isLoading,
     isSuccess,
