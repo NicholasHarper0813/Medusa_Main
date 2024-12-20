@@ -7,7 +7,8 @@
   "keywords": [
     "medusa-storefront"
   ],
-  "scripts": {
+  "scripts": 
+  {
     "dev": "next dev -p 8000",
     "build": "next build",
     "start": "next start -p 8000",
@@ -15,11 +16,13 @@
     "cypress": "cypress open",
     "analyze": "ANALYZE=true next build"
   },
-  "resolutions": {
+  "resolutions": 
+  {
     "webpack": "^5",
     "@types/react": "17.0.40"
   },
-  "dependencies": {
+  "dependencies":
+  {
     "@headlessui/react": "^1.6.1",
     "@hookform/error-message": "^2.0.0",
     "@medusajs/link-modules": "^0.1.1",
@@ -46,7 +49,8 @@
     "sharp": "^0.30.7",
     "webpack": "^5"
   },
-  "devDependencies": {
+  "devDependencies": 
+  {
     "@babel/core": "^7.17.5",
     "@medusajs/client-types": "^0.2.2",
     "@medusajs/medusa": "^1.12.1",
