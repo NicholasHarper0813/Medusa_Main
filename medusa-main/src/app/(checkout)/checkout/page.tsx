@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Checkout",
 }
 
-export default function Checkout() {
+export default function Checkout() 
+{
   return <CheckoutTemplate />
 }
