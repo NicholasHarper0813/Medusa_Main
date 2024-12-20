@@ -3,18 +3,19 @@
 import useEnrichedLineItems from "@lib/hooks/use-enrich-line-items"
 import DiscountCode from "@modules/checkout/components/discount-code"
 import SkeletonCartPage from "@modules/skeletons/templates/skeleton-cart-page"
-import { useCart, useMeCustomer } from "medusa-react"
 import EmptyCartMessage from "../components/empty-cart-message"
 import SignInPrompt from "../components/sign-in-prompt"
 import ItemsTemplate from "./items"
 import Summary from "./summary"
+import { useCart, useMeCustomer } from "medusa-react"
 
 const CartTemplate = () => {
   const { cart } = useCart()
   const { customer, isLoading } = useMeCustomer()
   const items = useEnrichedLineItems()
 
-  if (!cart || !cart?.id?.length || isLoading) {
+  if (!cart || !cart?.id?.length || isLoading) 
+  {
     return <SkeletonCartPage />
   }
 
