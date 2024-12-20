@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "View your addresses",
 }
 
-export default function Addresses() {
+export default function Addresses()
+{
   return <AddressesTemplate />
 }
