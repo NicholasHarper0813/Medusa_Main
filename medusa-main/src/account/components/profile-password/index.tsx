@@ -1,8 +1,8 @@
 import Input from "@modules/common/components/input"
 import React, { useEffect } from "react"
 import AccountInfo from "../account-info"
-import { medusaClient } from "@lib/config"
 import { Customer } from "@medusajs/medusa"
+import { medusaClient } from "@lib/config"
 import { useUpdateMe } from "medusa-react"
 import { useForm } from "react-hook-form"
 
@@ -21,7 +21,8 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
     undefined
   )
   
-  const {
+  const 
+  {
     register,
     handleSubmit,
     reset,
@@ -29,7 +30,8 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
     setError,
   } = useForm<UpdateCustomerPasswordFormData>()
 
-  const {
+  const 
+  {
     mutate: update,
     isLoading,
     isSuccess,
