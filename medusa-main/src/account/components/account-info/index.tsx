@@ -1,7 +1,7 @@
 import { Disclosure } from "@headlessui/react"
 import { useEffect } from "react"
-import useToggleState from "@lib/hooks/use-toggle-state"
 import Button from "@modules/common/components/button"
+import useToggleState from "@lib/hooks/use-toggle-state"
 import clsx from "clsx"
 
 type AccountInfoProps = {
@@ -32,7 +32,8 @@ const AccountInfo = ({
   }
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccess) 
+    {
       close()
     }
   }, [isSuccess, close])
