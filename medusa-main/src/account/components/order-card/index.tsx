@@ -1,9 +1,9 @@
 import { Order } from "@medusajs/medusa"
+import { formatAmount } from "medusa-react"
+import { useMemo } from "react"
 import Button from "@modules/common/components/button"
 import Thumbnail from "@modules/products/components/thumbnail"
-import { formatAmount } from "medusa-react"
 import Link from "next/link"
-import { useMemo } from "react"
 
 type OrderCardProps = {
   order: Omit<Order, "beforeInsert">
