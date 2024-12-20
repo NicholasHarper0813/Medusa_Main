@@ -11,11 +11,11 @@ export async function GET(
   { params }: { params: Record<string, any> }) 
 {
   const productService = await initializeProductModule()
-  const { handle } = params
   const searchParams = Object.fromEntries(request.nextUrl.searchParams)
-  const { page, limit } = searchParams
   const collections = await productService.listCollections()
   const collectionsByHandle = new Map<string, ProductCollectionDTO>()
+  const { page, limit } = searchParams
+  const { handle } = params
 
   for (const collection of collections) 
   {
@@ -28,7 +28,8 @@ export async function GET(
     return notFound()
   }
   
-  const {
+  const 
+  {
     rows: products,
     metadata: { count },
   } = await getProductsByCollectionId(collection.id, searchParams)
@@ -84,17 +85,20 @@ async function getProductsByCollectionId(
         collection
         collection_id
         thumbnail
-        images {
+        images 
+        {
           url
           alt_text
           id
         }
-        options {
+        options
+        {
           id
           value
           title
         }
-        variants {
+        variants 
+        {
           id
           title
           created_at
@@ -106,13 +110,16 @@ async function getProductsByCollectionId(
           length
           height
           width
-          options {
+          options 
+          {
             id
             value
             title
           }
-          price {
-            price_set {
+          price 
+          {
+            price_set 
+            {
               id
             }
           }
@@ -127,7 +134,8 @@ async function getProductsByCollectionId(
     pricingService: modules.pricingService as unknown as IPricingModuleService,
   })
   
-  return {
+  return 
+  {
     rows: productsWithPrices,
     metadata,
   }
