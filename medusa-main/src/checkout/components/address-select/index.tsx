@@ -14,13 +14,12 @@ type AddressSelectProps = {
 
 const AddressSelect = ({ addresses }: AddressSelectProps) => {
   const [selected, setSelected] = useState<string | undefined>(undefined)
-
   const { control, setSavedAddress } = useCheckout()
-
   const handleSelect = (id: string) => {
     const savedAddress = addresses.find((a) => a.id === id)
 
-    if (savedAddress) {
+    if (savedAddress) 
+    {
       setSavedAddress(savedAddress)
     }
 
@@ -47,7 +46,8 @@ const AddressSelect = ({ addresses }: AddressSelectProps) => {
         currentShippingAddress
       )
 
-      if (checkEquality) {
+      if (checkEquality)
+      {
         return address
       }
     }
