@@ -51,18 +51,12 @@ const SearchBoxWrapper = ({
     if (query !== value) {
       refine(value)
     }
-    // We don't want to track when the InstantSearch query changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
 
   useEffect(() => {
-    // We bypass the state update if the input is focused to avoid concurrent
-    // updates when typing.
     if (document.activeElement !== inputRef.current && query !== value) {
       setValue(query)
     }
-    // We don't want to track when the React state value changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
 
   useEffect(() => {
