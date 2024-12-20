@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "View and edit your ACME profile.",
 }
 
-export default function Profile() {
+export default function Profile()
+{
   return <ProfileTemplate />
 }
