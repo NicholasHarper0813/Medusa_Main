@@ -1,10 +1,10 @@
 import { useAccount } from "@lib/context/account-context"
 import { Customer, StorePostCustomersCustomerReq } from "@medusajs/medusa"
+import { useRegions, useUpdateMe } from "medusa-react"
+import { useForm, useWatch } from "react-hook-form"
 import Input from "@modules/common/components/input"
 import NativeSelect from "@modules/common/components/native-select"
-import { useRegions, useUpdateMe } from "medusa-react"
 import React, { useEffect, useMemo } from "react"
-import { useForm, useWatch } from "react-hook-form"
 import AccountInfo from "../account-info"
 
 type MyInformationProps = {
@@ -29,7 +29,8 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({ customer }) => {
     },
   })
 
-  const {
+  const 
+  {
     mutate: update,
     isLoading,
     isSuccess,
@@ -100,7 +101,8 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({ customer }) => {
   }
 
   const currentInfo = useMemo(() => {
-    if (!customer.billing_address) {
+    if (!customer.billing_address) 
+    {
       return "No billing address"
     }
 
