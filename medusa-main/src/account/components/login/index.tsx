@@ -1,13 +1,14 @@
 import { medusaClient } from "@lib/config"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
+import { FieldValues, useForm } from "react-hook-form"
 import { LOGIN_VIEW, useAccount } from "@lib/context/account-context"
 import Button from "@modules/common/components/button"
 import Input from "@modules/common/components/input"
 import Spinner from "@modules/common/icons/spinner"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { FieldValues, useForm } from "react-hook-form"
 
-interface SignInCredentials extends FieldValues {
+interface SignInCredentials extends FieldValues 
+{
   email: string
   password: string
 }
@@ -22,7 +23,8 @@ const Login = () => {
     setAuthError("Invalid email or password")
   }
 
-  const {
+  const 
+  {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
