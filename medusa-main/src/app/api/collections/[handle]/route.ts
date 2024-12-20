@@ -50,23 +50,21 @@ async function getProductsByCollectionId(
   collection_id: string,
   params: Record<string, any>
 ): Promise<{ rows: ProductDTO[]; metadata: Record<string, any> }> {
-  // Extract the query parameters
   let { currency_code } = params
-
   currency_code = currency_code && currency_code.toUpperCase()
-
-  // Initialize Remote Query with the Product and Pricing Modules
   const { query, modules } = await MedusaApp({
     modulesConfig: {
       [Modules.PRODUCT]: true,
       [Modules.PRICING]: true,
     },
-    sharedResourcesConfig: {
+    sharedResourcesConfig: 
+    {
       database: { clientUrl: process.env.POSTGRES_URL },
     },
   })
 
-  const filters = {
+  const filters = 
+  {
     take: parseInt(params.limit) || 100,
     skip: parseInt(params.offset) || 0,
     filters: {
