@@ -1,12 +1,12 @@
 import { Listbox, Transition } from "@headlessui/react"
 import { useCheckout } from "@lib/context/checkout-context"
 import { Address } from "@medusajs/medusa"
-import Radio from "@modules/common/components/radio"
-import ChevronDown from "@modules/common/icons/chevron-down"
-import clsx from "clsx"
 import { isEqual, omit } from "lodash"
 import { Fragment, useMemo, useState } from "react"
 import { useWatch } from "react-hook-form"
+import Radio from "@modules/common/components/radio"
+import ChevronDown from "@modules/common/icons/chevron-down"
+import clsx from "clsx"
 
 type AddressSelectProps = {
   addresses: Address[]
