@@ -2,14 +2,15 @@
 
 import Button from "@modules/common/components/button"
 import Spinner from "@modules/common/icons/spinner"
-import { useCustomerOrders } from "medusa-react"
 import Link from "next/link"
 import OrderCard from "../order-card"
+import { useCustomerOrders } from "medusa-react"
 
 const OrderOverview = () => {
   const { orders, isLoading } = useCustomerOrders()
 
-  if (isLoading) {
+  if (isLoading) 
+  {
     return (
       <div className="text-gray-900 w-full flex justify-center pt-12">
         <Spinner size={36} />
@@ -17,7 +18,8 @@ const OrderOverview = () => {
     )
   }
 
-  if (orders?.length) {
+  if (orders?.length) 
+  {
     return (
       <div className="flex flex-col gap-y-8 w-full">
         {orders.map((o) => (
