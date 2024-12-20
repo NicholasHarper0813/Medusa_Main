@@ -1,7 +1,9 @@
 {
   "baseUrl": "http://localhost:8000",
-  "env": {
-    "codeCoverage": {
+  "env": 
+  {
+    "codeCoverage": 
+    {
       "url": "/api/__coverage__"
     }
   }
