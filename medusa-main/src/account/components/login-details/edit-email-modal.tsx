@@ -1,15 +1,15 @@
 import { useAccount } from "@lib/context/account-context"
-import useToggleState from "@lib/hooks/use-toggle-state"
 import { emailRegex } from "@lib/util/regex"
 import { Customer } from "@medusajs/medusa"
+import { useUpdateMe } from "medusa-react"
+import { useForm } from "react-hook-form"
 import EditButton from "@modules/account/components/edit-button"
 import Button from "@modules/common/components/button"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
 import Spinner from "@modules/common/icons/spinner"
-import { useUpdateMe } from "medusa-react"
+import useToggleState from "@lib/hooks/use-toggle-state"
 import React, { useState } from "react"
-import { useForm } from "react-hook-form"
 
 type EditEmailModalProps = {
   customer: Omit<Customer, "password_hash">
@@ -23,7 +23,6 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
   const { state, open, close } = useToggleState(false)
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | undefined>(undefined)
-
   const { mutate } = useUpdateMe()
 
   const {
@@ -37,12 +36,12 @@ const EditEmailModal: React.FC<EditEmailModalProps> = ({ customer }) => {
   })
 
   const { refetchCustomer } = useAccount()
-
   const submit = handleSubmit((data) => {
     setSubmitting(true)
     setError(undefined)
 
-    if (data.email === customer.email) {
+    if (data.email === customer.email) 
+    {
       setSubmitting(false)
       setError("You must enter a new email.")
       return
