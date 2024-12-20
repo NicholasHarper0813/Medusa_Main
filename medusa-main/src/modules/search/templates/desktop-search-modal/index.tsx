@@ -1,11 +1,11 @@
-import useToggleState from "@lib/hooks/use-toggle-state"
 import { searchClient, SEARCH_INDEX_NAME } from "@lib/search-client"
+import { InstantSearch } from "react-instantsearch-hooks-web"
+import useToggleState from "@lib/hooks/use-toggle-state"
 import Modal from "@modules/common/components/modal"
 import Search from "@modules/common/icons/search"
 import DesktopHit from "@modules/search/components/desktop-hit"
 import DesktopHits from "@modules/search/components/desktop-hits"
 import SearchBox from "@modules/search/components/search-box"
-import { InstantSearch } from "react-instantsearch-hooks-web"
 
 const DesktopSearchModal = () => {
   const { state, close, open } = useToggleState()
